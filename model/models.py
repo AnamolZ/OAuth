@@ -8,11 +8,6 @@ class UserModel(BaseModel):
     full_name: str = None
     private: bool = False | True
 
-class User(BaseModel):
-    username: str
-    password: str
-    email: str
-
 class Token(BaseModel):
     accessToken: str
     tokenType: str
