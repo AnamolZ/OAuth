@@ -6,6 +6,9 @@ from model.models import User
 
 from main import OAuth2PasswordBearer, CryptContext
 
+pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
+oauth2_scheme = OAuth2PasswordBearer(tokenUrl="token")
+
 def findPost(id):
     for i in dataBase:
         if i["postId"] == id:
@@ -18,9 +21,6 @@ def getHighlight(id, highlightId):
                 if highlight["highlight_number"] == highlightId:
                     return highlight
     return None
-
-pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
-oauth2_scheme = OAuth2PasswordBearer(tokenUrl="token")
 
 def hash_password(password):
     return pwd_context.hash(password)
