@@ -8,7 +8,7 @@ from passlib.context import CryptContext
 
 app = FastAPI()
 
-SECRET_KEY = "b"
+SECRET_KEY = "bdWIiOiJ4em5vbSIsImV4cCI6MTcwMDk"
 ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_MINUTES = 30
 
