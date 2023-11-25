@@ -22,7 +22,7 @@ class User(BaseModel):
     disabled: bool or None = None
 
 db = {
-    "john": {
+    "xznom": {
         "username": "xznom",
         "full_name": "Xznom Nicklin",
         "email": "xznom@domain.com",
