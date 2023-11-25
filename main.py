@@ -51,7 +51,7 @@ async def postUpdateWithoutHighlight(postId: int, dataBaseM: UpdateModelWithoutH
     return {"Post Update": postFetch}, 200
 
 @app.put("/root/postUpdate/{postId}/{highlightId}")
-async def postUpdateWithHighlight(postId: int, highlightId: int, dataBaseM: UpdateModelWithHighlight):
+async def postUpdateWithHighlight(postId: int, highlightId: int, dataBaseM: UpdateModelWithHighlight, current_user: TokenData = Depends(get_current_user)):
     
     postFetch = findPost(postId)
     validRangeMax = len(postFetch["highlights"])
