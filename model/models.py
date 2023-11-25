@@ -24,12 +24,6 @@ class UpdateHLModel(BaseModel):
     name: Optional[str]
     description: Optional[str]
 
-class UpdateModel(BaseModel):
-    title: Optional[str] = None
-    content: Optional[str] = None
-    highlights: List[UpdateHLModel] = []
-    tips: List[str] = []
-
 class UpdateModelWithoutHighlight(BaseModel):
     title: Optional[str] = None
     content: Optional[str] = None
