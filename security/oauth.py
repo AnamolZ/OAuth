@@ -22,15 +22,15 @@ class User(BaseModel):
     email: EmailStr or None = None
     disabled: bool or None = None
 
-db = {
-    "john": {
-        "username": "xznom",
-        "full_name": "Xznom Nicklin",
-        "email": "xznom@domain.com",
-        "hashed_password": "$2b$12$FmBRKfDs0iu0uO4YPkKf1eeWlkVWyzArwhNcQxp8bVK7kAELBmT4a",
-        "disabled": False,
-    }
-}
+# db = {
+#     "john": {
+#         "username": "xznom",
+#         "full_name": "Xznom Nicklin",
+#         "email": "xznom@domain.com",
+#         "hashed_password": "$2b$12$FmBRKfDs0iu0uO4YPkKf1eeWlkVWyzArwhNcQxp8bVK7kAELBmT4a",
+#         "disabled": False,
+#     }
+# }
 
 def verify_password(plain_password, hashed_password):
     return pwd_context.verify(plain_password, hashed_password)
