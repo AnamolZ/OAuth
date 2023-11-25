@@ -1,22 +1,13 @@
 # app/models.py
 
-from main import List, Optional, BaseModel, EmailStr, random
-
-class UserModel(BaseModel):
-    userName: str
-    userEmail: EmailStr
-    full_name: str = None
-    private: bool = False | True
+from main import List, Optional, BaseModel, random
 
 class Token(BaseModel):
     accessToken: str
     tokenType: str
 
 class TokenData(BaseModel):
-    username: str = None
-
-class UserInDB(UserModel):
-    hashed_password: str    
+    username: str = None 
 
 class HighlightModel(BaseModel):
     name: str
