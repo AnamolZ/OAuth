@@ -1,9 +1,6 @@
 # app/func.py
 
 from dataBase.dataBase import dataBase
-from dataBase.credentialBase import db_users
-from model.models import User
-
 from main import OAuth2PasswordBearer, CryptContext
 
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
