@@ -5,7 +5,7 @@ from pydantic import BaseModel, EmailStr
 from datetime import datetime, timedelta
 from jose import JWTError, jwt
 from passlib.context import CryptContext
-from 
+from ..dataBase.credentialBase import db
 
 app = FastAPI()
 
