@@ -20,7 +20,7 @@ class PostModel(BaseModel):
     highlights: List[HighlightModel]
     tips: List[str]
 
-class UpdateHLModel(BaseModel):
+class UpdateModel(BaseModel):
     name: Optional[str]
     description: Optional[str]
 
@@ -32,5 +32,5 @@ class UpdateModelWithoutHighlight(BaseModel):
 class UpdateModelWithHighlight(BaseModel):
     title: Optional[str] = None
     content: Optional[str] = None
-    highlights: Optional[List[UpdateHLModel]] = None
+    highlights: Optional[List[UpdateModel]] = None
     tips: Optional[List[str]] = None
