@@ -37,6 +37,36 @@ async def postRetrieval(current_user: TokenData = Depends(get_current_user)):
 async def postRetrieval(postId: int, current_user: TokenData = Depends(get_current_user)):
     postFetch = findPost(postId)
     return {"Post Fetch" : postFetch}
+
+@app.put("/root/postUpdate/{postId}")
+async def postUpdateWithoutHighlight(postId: int, dataBaseM: UpdateModelWithoutHighlight):
+    postFetch = findPost(postId)
+    if not postFetch:
+        raise HTTPException(status_code=404, detail="Post Not Found")
+    
+    for i in ['title','content','tips']:
+        if dataBaseM.dict()[i]:
+            postFetch[i] = dataBaseM.dict()[i]
+
+    return {"Post Update": postFetch}, 200
+
+@app.put("/root/postUpdate/{postId}/{highlightId}")
+async def postUpdateWithHighlight(postId: int, highlightId: int, dataBaseM: UpdateModelWithHighlight):
+    
+    postFetch = findPost(postId)
+    validRangeMax = len(postFetch["highlights"])
+    validRangeMin = 1
+    highlightRange = range(validRangeMin, validRangeMax + 1)
+
+    if postFetch:
+        if highlightId in highlightRange:
+            tempVar = postFetch["highlights"][highlightId - 1]
+            tempVar.update(dataBaseM.highlights[0].dict(exclude_unset=True))
+            return {"Post Update": postFetch}, 200
+        else:
+            raise HTTPException(status_code=404, detail="Highlight Not Found")
+    else:
+        raise HTTPException(status_code=404, detail="Post Not Found")
     
 @app.delete("/root/postDelete/{postId}")
 async def postDelete(postId: int, current_user: TokenData = Depends(get_current_user)):
