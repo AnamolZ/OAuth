@@ -23,9 +23,9 @@ class User(BaseModel):
 
 db = {
     "john": {
-        "username": "john",
+        "username": "xznom",
         "full_name": "Xznom Nicklin",
-        "email": "xznom@example.com",
+        "email": "xznom@domain.com",
         "hashed_password": "$2b$12$FmBRKfDs0iu0uO4YPkKf1eeWlkVWyzArwhNcQxp8bVK7kAELBmT4a",
         "disabled": False,
     }
