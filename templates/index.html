@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Travel Blog</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .post {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: #007BFF;
+        }
+
+        p {
+            color: #555;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 5px;
+        }
+
+        .highlights {
+            margin-left: 20px;
+        }
+
+        .tips {
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Travel Blog</h1>
+
+    {% for post in dataBase %}
+        <div class="post">
+            <h2>{{ post.title }}</h2>
+            <p>{{ post.content }}</p>
+
+            <div class="highlights">
+                <h3>Highlights:</h3>
+                <ul>
+                    {% for highlight in post.highlights %}
+                        <li>
+                            <strong>{{ highlight.name }}:</strong> {{ highlight.description }}
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+            <div class="tips">
+                <h3>Tips:</h3>
+                <ul>
+                    {% for tip in post.tips %}
+                        <li>{{ tip }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    {% endfor %}
+</body>
+</html>
