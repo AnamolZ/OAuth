@@ -10,4 +10,4 @@ EXPOSE 8888
 
 ENV DEBUG_MODE True
 
-CMD ["uvicorn", "app.security.oauth:app", "--host", "0.0.0.0", "--port", "8888", "--reload"]
+CMD ["uvicorn", "security.oauth:app", "--host", "0.0.0.0", "--port", "8888", "--reload"]
