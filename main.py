@@ -39,7 +39,7 @@ async def postRetrieval(postId: int, current_user: TokenData = Depends(get_curre
     return {"Post Fetch" : postFetch}
 
 @app.put("/root/postUpdate/{postId}")
-async def postUpdateWithoutHighlight(postId: int, dataBaseM: UpdateModelWithoutHighlight):
+async def postUpdateWithoutHighlight(postId: int, dataBaseM: UpdateModelWithoutHighlight, current_user: TokenData = Depends(get_current_user)):
     postFetch = findPost(postId)
     if not postFetch:
         raise HTTPException(status_code=404, detail="Post Not Found")
