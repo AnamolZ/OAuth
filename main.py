@@ -1,7 +1,6 @@
 # app/main.py
 
-from fastapi import FastAPI, Depends, HTTPException, status
-from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
+from fastapi import FastAPI, Depends, HTTPException
 from passlib.context import CryptContext
 
 from typing import List, Optional
