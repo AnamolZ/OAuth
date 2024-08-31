@@ -24,7 +24,7 @@ To interact with the API and retrieve responses, execute:
 python Finance_API.py
 ```
 
-This command runs the `Finance_API.py` script, which typically contains the logic for making requests to the API and processing the responses.
+`Finance_API.py` script, which typically contains the logic for making requests to the API and processing the responses.
 
 ---
 
