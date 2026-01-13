@@ -60,6 +60,17 @@ uv run python -m authflow_cli.cli.finance_cli
 ```
 You will be prompted for an access token. You can generate one via Postman or the Swagger documentation mentioned above.
 
+**Postman Usage**
+
+1. Open Postman and create a new request.
+2. Set the request method to POST.
+3. Enter the URL `http://127.0.0.1:8000/token`.
+4. In the body of the request, select `x-www-form-urlencoded`.
+5. Add the following key-value pairs:
+   - `username`: "anamol"
+   - `password`: "mysecretpassword"
+6. Click `Send` to generate a token.
+
 ---
 
 ### Technical Security Details
